@@ -23,3 +23,6 @@ grandfather_of(F, G) :-
 sibling_of_ancestor_of(F, SA) :-
   ancestor_of(F, X),
   sibling_of(X, SA).
+
+amount_of_descendants(F, Amount) :-
+  aggregate_all(count, ancestor_of(_, F), Amount).
