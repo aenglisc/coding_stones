@@ -19,3 +19,7 @@ nephew_of(F, N) :- sibling_of(F, X), parent_of(N, X).
 grandfather_of(F, G) :-
   parent_of(F, P),
   father_of(P, G).
+
+sibling_of_ancestor_of(F, SA) :-
+  ancestor_of(F, X),
+  sibling_of(X, SA).
